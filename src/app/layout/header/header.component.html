@@ -1,0 +1,20 @@
+<div class="header" [ngClass]="navbarFixed?'fixed':'nofixed'">
+    <mat-icon (click)="drawer.toggle()">menu</mat-icon>
+    <div class="title"><h2>Google Contacts</h2></div>
+
+    <ng-container *ngIf="this.LoggedIn(); else signIn ">
+      <div class="profile" [matMenuTriggerFor]="menu">
+          <span >{{this.userInfo?.info?.name | titlecase }}</span>
+          <mat-icon>keyboard_arrow_down</mat-icon>
+          <img [src]=this.userInfo?.info?.picture class="userpicture">
+      </div>
+    </ng-container>
+    <ng-template #signIn>
+      <button mat-raised-button (click)="SignIn()">SignIn</button>
+    </ng-template>
+  <mat-menu #menu="matMenu">
+  <!-- <button mat-menu-item *ngIf="!this.LoggedIn()" (click)="SignIn()">SignIn</button> -->
+  <button mat-menu-item *ngIf="this.LoggedIn()">{{this.userInfo?.info?.email}}</button>
+  <button mat-menu-item *ngIf="this.LoggedIn()" (click)="Signout()" >Signout</button>
+  </mat-menu>
+</div>

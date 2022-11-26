@@ -1,0 +1,63 @@
+*{
+color: black;
+}
+.container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.control{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: baseline;
+
+}
+.submit{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+.input
+{
+    position: relative;
+    left: 30px;
+    height: 35px;
+    width: 280px;
+    border: 1px #dadde3 solid;
+    border-radius: 30px;
+    margin-top: 10px;
+    padding: 0 20px;
+}
+button
+{
+    height: 35px;
+    width: 280px;
+    border: 1px #edeff2 solid;
+    border-radius: 30px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3f51b5;
+    color: white;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+}
+.input-error{
+    display: flex;
+    flex-direction: column;
+}
+.error-msg{
+    color: red;
+    margin: 5px 0px 0px 25px;
+}
+input.ng-invalid.ng-touched
+{
+outline: 1px red solid;
+}

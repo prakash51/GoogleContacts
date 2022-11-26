@@ -1,0 +1,48 @@
+.header
+  {
+    background-color: #3f51b5;
+    height: 70px;
+    color: #fef5f5;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
+  }
+
+.userpicture{
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+.profile{
+    display: flex;
+    align-items: center;
+    justify-self: flex-end;
+    margin-right:15px
+}
+.profile> span
+{
+    font-weight: 500;
+    padding-right: 10px;
+}
+.title{
+    margin-top: 15px !important;
+    margin-left: 14px;
+    flex-grow: 1;
+}
+.fixed
+{
+position: fixed;
+width: 100%;
+transition: 0.2s linear;
+top: 0px;
+}
+.nofixed
+{
+  position: static;
+  transition: 0.2s linear;
+  top:-50px;
+}
+.mat-raised-button{
+  margin-right: 10px;
+}

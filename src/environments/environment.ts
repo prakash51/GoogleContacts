@@ -3,8 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+   OAuthConfig:  {
+    issuer: 'https://accounts.google.com',
+    clientId: '59285522216-7f0oudam27cuuosgjjed2tekg84krjpn.apps.googleusercontent.com',
+    strictDiscoveryDocumentValidation: false,
+    redirectUri: window.location.origin,
+    scope: 'openid profile email https://www.googleapis.com/auth/contacts',
+  }
+  
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file
