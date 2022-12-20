@@ -19,18 +19,7 @@ export class HeaderComponent implements OnInit {
   @Input('drawer') drawer:MatSidenav;
   public userInfo:UserInfo;
   public navbarFixed:boolean=false;
-  // @HostListener('window:scroll',['$event']) onScroll()
-  // {
-  //   if(window.scrollY>100)
-  //   {
-  //     this.navbarFixed=true;   
-  //   }
-  //   else
-  //   {
-  //     this.navbarFixed=false;   
-  //   }
-  //   console.log(window.scrollY,this.navbarFixed);
-  // }
+ 
   ngOnInit(): void {
     this._googleAPIService.userProfile$.subscribe((info)=>{
       this.userInfo=info;

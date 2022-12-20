@@ -1,6 +1,6 @@
 <div class="header" [ngClass]="navbarFixed?'fixed':'nofixed'">
-    <mat-icon (click)="drawer.toggle()">menu</mat-icon>
-    <div class="title"><h2>Google Contacts</h2></div>
+    <!-- <mat-icon (click)="drawer.toggle()">menu</mat-icon> -->
+    <div class="title"><h2>Manage Your Contacts</h2></div>
 
     <ng-container *ngIf="this.LoggedIn(); else signIn ">
       <div class="profile" [matMenuTriggerFor]="menu">
@@ -14,7 +14,7 @@
     </ng-template>
   <mat-menu #menu="matMenu">
   <!-- <button mat-menu-item *ngIf="!this.LoggedIn()" (click)="SignIn()">SignIn</button> -->
-  <button mat-menu-item *ngIf="this.LoggedIn()">{{this.userInfo?.info?.email}}</button>
-  <button mat-menu-item *ngIf="this.LoggedIn()" (click)="Signout()" >Signout</button>
+  <div mat-menu-item *ngIf="this.LoggedIn()">{{this.userInfo?.info?.email}}</div>
+  <button mat-menu-item *ngIf="this.LoggedIn()" (click)="Signout()">Signout</button>
   </mat-menu>
 </div>

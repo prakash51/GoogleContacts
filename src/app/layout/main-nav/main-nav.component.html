@@ -2,14 +2,19 @@
 
 
 <mat-sidenav-container class="container">
-   
-    <mat-sidenav  mode="over" #drawer class="slider">
+    <mat-sidenav  [opened]="true"   mode="side" #drawer class="slider" [fixedInViewport]="true">
         <mat-nav-list class="slideitems">
             <mat-toolbar >
                 <span>Menu</span>
             </mat-toolbar>
-            <mat-list-item routerLink="/UserProfile">Create Contact</mat-list-item>
-            <mat-list-item routerLink="/ContactsList">GoogleContacs</mat-list-item>
+            <mat-list-item routerLink="/UserProfile" class="list-item">
+                    <mat-icon>person_add</mat-icon>           
+                    <span class="listitem-text">Create Contact</span>  
+            </mat-list-item>
+            <mat-list-item routerLink="/ContactsList" class="list-item">
+                <mat-icon>person</mat-icon>    
+               <span class="listitem-text">Contacts</span>  
+            </mat-list-item>
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content >

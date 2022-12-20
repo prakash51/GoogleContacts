@@ -31,7 +31,8 @@ export class GoogleAPIService {
       if(this._oAuthService.hasValidAccessToken()){
         sessionStorage.setItem('AccessToken',this._oAuthService.getAccessToken());
         let userpro = await this._oAuthService.loadUserProfile();
-        this._userProfile.next(userpro as UserInfo)  
+        console.log(userpro);
+        this._userProfile.next(userpro as UserInfo);
       }
   }
 

@@ -7,11 +7,19 @@ import { LoaderService } from './service/loader.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent  {
+export class AppComponent {
   title = 'Google-ContactsApi-POC';
-  public loading$=this._loader.loading$;
-  
-  constructor(private _loader:LoaderService)
-  {
+  public loading$ = this._loader.loading$;
+
+  constructor(private _loader: LoaderService, private _googleAPIService: GoogleAPIService) {
+
+  }
+
+  async SignIn(): Promise<void> {
+    await this._googleAPIService.login();
+  }
+
+   LoggedIn(): boolean {
+    return this._googleAPIService.isLoggedIn();
   }
 }

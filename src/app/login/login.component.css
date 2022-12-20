@@ -1,0 +1,247 @@
+* {
+    margin: 0px;
+    box-sizing: border-box;
+    xfont-family: 'Roboto', sans-serif;
+}
+
+
+.layout {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    padding: 45px 30px;
+}
+
+.main {
+    display: flex;
+    /* border: 1px black solid; */
+    min-width: 310px;
+    max-width: 450px;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 15px;
+    border: #c3c6cc 2px solid;
+    height: 500px;
+    justify-content: space-evenly;
+}
+
+.left {
+    width: 50%;
+    min-width: 500px!important;
+    background-color: white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px 0 0 20px;
+
+}
+
+.title {
+    font-weight: 600;
+    font-size: 22px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.victory {
+    height: 25px;
+    width: 25px;
+}
+
+.fingers-cross {
+    height: 30px;
+    width: 30px;
+}
+
+.longtext {
+    padding: 10px 0;
+}
+
+.googlelogo,
+.fblogo {
+    height: 25px;
+    width: 25px;
+    margin-right: 10px;
+}
+
+.sign-in-google,
+.sign-in-fb {
+    padding: 5px;
+    margin: 10px 0;
+    width: 100%;
+    min-width: fit-content;
+    border: 1px solid #e9ecf0;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.signinemail {
+    display: flex;
+    align-self: center;
+    color: #e9ecf0;
+    font-size: 10px;
+    margin: 10px 0;
+}
+
+.email,
+.Password {
+    border-radius: 20px;
+    border: 1px solid #ebedf0;
+    height: 35px;
+    margin: 10px 0;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+.email:focus,
+.Password:focus {
+    outline: solid 1px #7d6af1;
+}
+
+.email-txt {
+    font-weight: 500;
+}
+
+.forgetpwd {
+    color: #664fef;
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+.login {
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #5138ee;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    color: white;
+    margin: 20px 0;
+    cursor: pointer;
+}
+
+.copyright {
+    align-self: flex-start;
+    font-size: 10px;
+    color: #c3c6cc;
+    padding-top: 70px;
+}
+
+.right {
+    width: 50%;
+    xbackground-color: #7966f2;
+    height: 100%;
+    display: flex;
+    border-radius: 0 20px 20px 0;
+    justify-content: center;
+    align-items: center;
+    padding: 60px;
+    position: relative;
+}
+
+.contentbox {
+    display: flex;
+    height: 100%;
+    width: 420px;
+    background-color: #9384f5;
+    border-radius: 20px;
+    /* width: 70%; */
+  flex-direction: column;
+  position: relative;
+   
+}
+
+.right-txt {
+    font-size: xx-large;
+    font-weight: 600;
+    color: white;
+    padding-top: 50px;
+}
+
+.right-txt2
+{
+    font-size: xx-large;
+    font-weight: 600;
+    color: white;
+    padding-top: 10px;
+}
+.hunderedwithwhite {
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
+    background-color: white;
+    position: relative;
+    left: 100%;
+    transform: translate(-50%, -100%);
+}
+
+.hundered {
+    height: 25px;
+    width: 25px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.handshake {
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.handshakewithwhite {
+    position: relative;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background-color: white;
+    top: 50%;
+    transform: translate(-50%, -300%);
+}
+.right-txt-total
+{
+    padding-left: 50px;
+}
+.girl {
+    position: absolute;
+    height: 440px;
+    width: 350px;
+    top: 120px;
+    left: 30%;
+    /* right: 200px;
+    top: 180px;
+    left: 250px; */
+}
+.vrline{
+    position: relative;
+    border-left: #cdccd1 1px solid;
+    height:70px;
+    top: 30px;
+    /* margin-top: 30px; */
+}
+.hrline
+{
+    border-bottom: #cdccd1 1px solid;
+    width: 40px;
+    margin-left: 50px;
+    margin-top: 60px;
+}
+.contact-card
+{
+    max-width: 100%;
+    max-height: 100%;
+}

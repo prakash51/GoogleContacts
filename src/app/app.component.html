@@ -1,3 +1,9 @@
-<app-main-nav></app-main-nav>
+
+<ng-container *ngIf="!this.LoggedIn(); else homepage">
+    <app-login></app-login>
+</ng-container>
+<ng-template #homepage>
+    <app-main-nav></app-main-nav>
+</ng-template>
 <div class="overlay" *ngIf="loading$ | async"></div>
 <app-loader></app-loader>

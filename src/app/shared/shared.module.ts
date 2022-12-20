@@ -11,8 +11,12 @@ import { LoaderComponent } from '../loader/loader.component';
 import { FormsModule } from '@angular/forms';
 import {MatListModule} from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatDialogModule, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
-LoaderComponent
 @NgModule({
   declarations: [LoaderComponent],
   imports: [
@@ -26,7 +30,12 @@ LoaderComponent
     MatCheckboxModule,
     FormsModule,
     MatListModule,
-    MatButtonModule
+    MatButtonModule,
+    MatPaginatorModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDialogModule,
+    MatSnackBarModule
   ],
   exports:[ MatMenuModule,
     MatToolbarModule,
@@ -38,8 +47,16 @@ LoaderComponent
     LoaderComponent,
     FormsModule,
     MatListModule,
-    MatButtonModule
+    MatButtonModule,
+    MatPaginatorModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDialogModule,
+    MatSnackBarModule
+  ],
+  providers:[
+    { provide: MAT_DIALOG_DATA, useValue: { }},
+    {provide:MatDialogRef,useValue: {} }
   ]
-    
 })
 export class SharedModule { }

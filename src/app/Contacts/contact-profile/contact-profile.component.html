@@ -1,18 +1,17 @@
-<app-loader></app-loader>
 <div class="container">
     <h1>{{title}}</h1>
     <form  #ContactProfile="ngForm" (ngSubmit)="submit(ContactProfile)">
         <div class="control">
-            <label>Name:</label>
+            <label>Name<sup  *ngIf=!data?.viewProfile class="manditory">*</sup>:</label>
             <div class="input-error">
-                <input type="text" name="name"  class="input"  placeholder="Enter Name"  [(ngModel)]="contactName" required #name="ngModel">
+                <input type="text" name="name"  class="input"  placeholder="Enter Name"  [(ngModel)]="contactName" required #name="ngModel" [disabled]=data?.viewProfile>
                 <span class="error-msg" *ngIf="name.invalid && name.touched">Name is required</span>
             </div>
         </div>
         <div class="control">
-            <label>PhoneNumber:</label>
+            <label>PhoneNumber<sup  *ngIf=!data?.viewProfile  class="manditory">*</sup>:</label>
             <div class="input-error">
-                <input type="tel" name="phoneNumber" class="input" placeholder="Enter PhoneNumber"  [(ngModel)]="contactNumber" pattern="^[0-9]+[0-9]*$" required #phoneNumber="ngModel">
+                <input type="tel" name="phoneNumber" class="input" placeholder="Enter PhoneNumber"  [(ngModel)]="contactNumber" pattern="^[0-9]+[0-9]*$" required #phoneNumber="ngModel" [disabled]=data?.viewProfile>
                 <div class="input-error" *ngIf="phoneNumber.touched">
                     <span class="error-msg" *ngIf="phoneNumber.errors?.['pattern'] && phoneNumber.touched"  >PhoneNumber is invalid</span>
                     <span class="error-msg" *ngIf="phoneNumber.errors?.['required'] && phoneNumber.touched"  >PhoneNumber is required</span>
@@ -23,14 +22,18 @@
             <label>EmailId:</label>
             <div class="input-error">
                 <div class="input-error" >
-                    <input type="email" name="emailId" placeholder="Enter Email Address" class="input" [(ngModel)]="contactEmaiId" #emailId="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                    <input type="email" name="emailId" placeholder="Enter Email Address" class="input" [(ngModel)]="contactEmaiId" #emailId="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" [disabled]=data?.viewProfile>
                     <span class="error-msg" *ngIf="emailId.touched && emailId.errors?.['pattern']">Email is invalid. Please Enter Valid EmailId</span>
                 </div>
             </div>
         </div>
-        <div class="submit">
+        <div class="submit" *ngIf=!data?.viewProfile>
+            <button type="button" (click)="cancel()"  >Cancel</button>
             <button type="submit" [disabled]="!ContactProfile.form.valid" >{{buttonName}}</button>
         </div>
     </form>
+    <div *ngIf=data?.viewProfile mat-dialog-actions>
+        <button type="button" mat-button (click)="closeDialog()">Close</button>
+      </div>
 </div>
 

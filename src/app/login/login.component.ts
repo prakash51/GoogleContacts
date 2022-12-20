@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { OAuthService } from 'angular-oauth2-oidc';
 import { BehaviorSubject } from 'rxjs';
 import { UserInfo } from '../Models/contacts.model';
+import { GoogleAPIService } from '../service/google-api.service'
 
 @Component({
   selector: 'app-login',
@@ -13,24 +14,17 @@ import { UserInfo } from '../Models/contacts.model';
 export class LoginComponent implements OnInit {
  // accessToken:string;
  // public userProfile = new BehaviorSubject<UserInfo>(null);
-  constructor(private _activedrouter:ActivatedRoute,private oAuthService:OAuthService) { 
-    this._activedrouter.fragment.subscribe(async params=>{
-      let x= await this.oAuthService.tryLogin()
-      // this.oAuthService.tryLoginImplicitFlow().then(()=>{
-      //   if (this.oAuthService.hasValidIdToken()) {
-      //     this.oAuthService.loadUserProfile().then((info) => {
-      //      this.userProfile.next(info as UserInfo);
-      //      console.log(info);
-      //      console.log(this.oAuthService.getAccessToken());
-      //    })
-      //  }
-      // });
-    //  this.accessToken=params
-      
-    });
-
+  constructor(private _googleAPIService:GoogleAPIService) { 
   }
-
+  async SignIn():Promise<void>
+  {
+   await this._googleAPIService.login();
+  }
+  LoggedIn():boolean
+  {
+    sessionStorage.getItem('AccessToken')
+    return this._googleAPIService.isLoggedIn();
+  }
   ngOnInit(): void {
   }
 

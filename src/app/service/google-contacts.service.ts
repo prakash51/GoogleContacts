@@ -12,33 +12,33 @@ export class GoogleContactsService {
   }
 
   getContactsT() {
-    return this._httpClient.get<Contacts[]>("http://localhost:5100/GoogleContacts/GetContacts") as BehaviorSubject<Contacts[]>;
+    return this._httpClient.get<Contacts[]>("http://localhost:3400/GoogleContactsAPI/GetAllContacts") as BehaviorSubject<Contacts[]>;
   }
   getContacts():Promise<Contacts[]> {
-   return firstValueFrom(this._httpClient.get<Contacts[]>("http://localhost:5100/GoogleContacts/GetContacts"));
+   return firstValueFrom(this._httpClient.get<Contacts[]>("http://localhost:3400/GoogleContactsAPI/GetContact"));
  }
   deleteContacts(deleteContacts: DeleteContacts) {
-    return this._httpClient.post("http://localhost:5100/GoogleContacts/DeleteContacts", deleteContacts);
+    return this._httpClient.post("http://localhost:3400/GoogleContactsAPI/DeleteContacts", deleteContacts);
   }
 
   createContact(newContact: Contacts) {
-    return this._httpClient.post("http://localhost:5100/GoogleContacts/CreateContact", newContact);
+    return this._httpClient.post("http://localhost:3400/GoogleContactsAPI/CreateContact", newContact);
   }
 
   getContact(contactId:string)
   {
-    return this._httpClient.get<Contacts>("http://localhost:5100/GoogleContacts/GetContact",{params:{
+    return this._httpClient.get<Contacts>("http://localhost:3400/GoogleContactsAPI/GetContact",{params:{
       id:contactId
     }})
   }
 
   updateContact(updateContact:Contacts)
   {
-    return this._httpClient.patch<any>("http://localhost:5100/GoogleContacts/UpdateContact",updateContact);
+    return this._httpClient.patch<any>("http://localhost:3400/GoogleContactsAPI/UpdateContact",updateContact);
   }
   
   deleteContact(id:string) {
-    return this._httpClient.delete("http://localhost:5100/GoogleContacts/DeleteContact",{params:{
+    return this._httpClient.delete("http://localhost:3400/GoogleContactsAPI/DeleteContact",{params:{
       id:id
     }})
   }

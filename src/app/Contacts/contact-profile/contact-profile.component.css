@@ -1,6 +1,8 @@
 *{
 color: black;
 }
+
+
 .container
 {
     display: flex;
@@ -19,8 +21,9 @@ color: black;
 }
 .submit{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     padding: 10px;
+    cursor: pointer;
 }
 .input
 {
@@ -33,21 +36,37 @@ color: black;
     margin-top: 10px;
     padding: 0 20px;
 }
+button[type='submit']:disabled
+{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
 button
 {
     height: 35px;
-    width: 280px;
+    width: 180px;
     border: 1px #edeff2 solid;
     border-radius: 30px;
     margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #3f51b5;
     color: white;
     font-weight: 600;
     font-size: 13px;
     cursor: pointer;
+}
+button[type='submit']
+{
+    background-color: #3f51b5;
+}
+
+button[type='button']
+{
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
 }
 .input-error{
     display: flex;
@@ -60,4 +79,9 @@ button
 input.ng-invalid.ng-touched
 {
 outline: 1px red solid;
+}
+.manditory
+{
+    color: red;
+    padding-left: 3px;
 }

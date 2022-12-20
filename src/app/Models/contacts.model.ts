@@ -2,7 +2,7 @@ export class Contacts {
   resourceName: string;
   etag: string;
   names:Names[]=[];
-  emailAddresses?:EmailAddresses[] =[];
+  emailAddresses?: null | EmailAddresses[] =[] ;
   phoneNumbers?:  PhoneNumbers[]=[];
   metadata: Metadata;
 }
@@ -22,6 +22,14 @@ export class Source {
 export class EmailAddresses {
   metadata: Metadata;
   value: string;
+}
+export class Membership {
+  metadata: Metadata
+  contactGroupMembership: ContactGroupMembership
+}
+export class ContactGroupMembership {
+  contactGroupId: string
+  contactGroupResourceName: string
 }
 export class Metadata {
   primary?: boolean ;
